@@ -60,4 +60,6 @@ b.	An option for “using” the cash should be available. (Manual inserting an 
 a.	For example, In the last year – you spent 400$ using rented scooters.
 b.	Another example is: In the last year – your spent 5000$ on street food. (A category)
 8.	Recommendations (FUTURISTIC and maybe a bad idea): Buying a new scooter will cost you between 300-1000$.
-9.	If a budget found to be filled only by the end of the month (because 
+9.	If a budget is found to be filled only by the end of the month (because the user does not need so much in this budget, but he saw he can spend more so why not) addvice the user to make the budget tighter.
+10.	Packed expenses - Such as "gift to my mom" that includes 3 things.
+11.	Integrating with markets - Auto insert shopping bags from the grocerry store as a packed expense, using only a scanned reception, or even better, a digital one.
