@@ -1,5 +1,6 @@
 from typing import List
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware  # Import CORSMiddleware
 from sqlalchemy.orm import Session
 from app import schemas, crud  # Removed models
 from app.database import SessionLocal, engine, Base
@@ -7,6 +8,14 @@ from app.database import SessionLocal, engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Dependency to get DB session

@@ -6,3 +6,4 @@ alembic
 pydantic
 pytest
 pre-commit
+psycopg2-binary
