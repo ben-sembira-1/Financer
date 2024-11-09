@@ -1,12 +1,15 @@
 from sqlalchemy.orm import Session
-from . import models, schemas
+from app import models, schemas  # Changed to absolute imports
 
 
 def get_balance_items(db: Session, month: str):
     return db.query(models.BalanceItem).filter(models.BalanceItem.month == month).all()
 
 
-def create_balance_item(db: Session, item: schemas.BalanceItemCreate):
+def create_balance_item(
+    db: Session,
+    item: schemas.BalanceItemCreate,
+) -> models.BalanceItem:
     db_item = models.BalanceItem(**item.dict())
     db.add(db_item)
     db.commit()

@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, Boolean, Float, Date
-from .database import Base
+from sqlalchemy import Column, Integer, String, Boolean, Float
+from app.database import Base
 
 
 class BalanceItem(Base):
