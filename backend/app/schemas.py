@@ -1,4 +1,15 @@
 from pydantic import BaseModel
+from typing import Optional
+
+
+class BalanceItemUpdate(BaseModel):
+    month: Optional[str]
+    description: Optional[str]
+    amount: Optional[float]
+    is_investment: Optional[bool]
+
+    class Config:
+        orm_mode = True
 
 
 class BalanceItemBase(BaseModel):
