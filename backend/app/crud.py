@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app import models, schemas  # Changed to absolute imports
 
+
 def get_total_amounts(db: Session, month: str):
     total_investments = (
         db.query(func.sum(models.BalanceItem.amount))
@@ -38,6 +39,7 @@ def create_balance_item(
     db.commit()
     db.refresh(db_item)
     return db_item
+
 
 def update_balance_item(db: Session, item_id: int, item: schemas.BalanceItemUpdate):
     db_item = (

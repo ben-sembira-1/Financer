@@ -36,7 +36,7 @@ def create_balance_item(item: schemas.BalanceItemCreate, db: Session = Depends(g
     "/balance_items/{month}",
     response_model=List[schemas.BalanceItem],
 )
-def read_balance_items(
+def read_balance_items_specific_month(
     month: str,
     db: Session = Depends(get_db),
 ):
@@ -50,6 +50,7 @@ def read_balance_items(
 @app.get("/balance_items/{month}/totals")
 def get_totals(month: str, db: Session = Depends(get_db)):
     return crud.get_total_amounts(db, month)
+
 
 @app.put("/balance_items/{item_id}", response_model=schemas.BalanceItem)
 def update_item(
@@ -66,6 +67,7 @@ def delete_item(item_id: int, db: Session = Depends(get_db)):
     success = crud.delete_balance_item(db, item_id)
     if not success:
         raise HTTPException(status_code=404, detail="Item not found")
+
 
 @app.get("/balance_items/", response_model=List[schemas.BalanceItem])
 def read_balance_items(db: Session = Depends(get_db)):
